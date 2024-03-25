@@ -1,34 +1,35 @@
+<img align="right" width="250" height="47" src="Gematik_Logo_Flag_With_Background.png"/> <br/> 
+
 # kether-solckt
 
-based on https://github.com/web3j/web3j-sokt
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+	</li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+  </ol>
+</details>
 
-Example usage:
+## About The Project
+This project is a stripped down version of [web3j/web3j-sokt](https://github.com/web3j/web3j-sokt) taken into gematik namespace to used by [kether gradle plugin](https://github.com/gematik/poc-fue-ketherPlugin).
+This Work ist part of a discontinued collaboration within [IDUnion project](https://idunion.org/projekt/?lang=en)
 
-```kotlin
-val fileName = filePath.substringAfterLast("/")
-println("sokt Processing $fileName")
-val solidityFile = SolidityFile(filePath)
+## Usage
+Build and publish to MavenLocal with gradle, so it can be used by [kether gradle plugin](https://github.com/gematik/poc-fue-ketherPlugin)
 
-println("Resolving compiler version for $fileName")
-val compilerInstance = solidityFile.getCompilerInstance()
-
-println("Resolved ${compilerInstance.solcRelease.version} for $fileName")
-
-val result = compilerInstance.execute(
-    SolcArguments.OUTPUT_DIR.param { "/tmp" },
-    SolcArguments.BIN,
-    SolcArguments.OVERWRITE
-)
-
-println("Solc exited with code: ${result.exitCode}")
-println("Solc standard output:\n${result.stdOut}")
-println("Solc standard error:\n${result.stdErr}")
-
-```
+## Contributing
+This project is part of a proof of concept which is no longer being maintained.
 
 ## License
 
-Copyright 2020 Web3 Labs Ltd.
+Copyright 2020 Web3 Labs Ltd.</br>
 Copyright 2023-2024 gematik GmbH
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
